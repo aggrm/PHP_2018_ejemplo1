@@ -51,7 +51,7 @@
             var _cajaNombre = $('#cajaNombre').val();
             var _cajaPassword = $('#cajaPassword').val();
             
-            $('#principal').load("login.php",{
+            $('#principal').load('login.php',{
                 cajaNombre : _cajaNombre,
                 cajaPassword : _cajaPassword
             });

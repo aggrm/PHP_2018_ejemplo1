@@ -10,18 +10,20 @@ $cajaPassword = $_POST['cajaPassword'];
 $resultadoQuery = $mysqli -> query("SELECT * FROM usuarios WHERE nombreUsuario='$cajaNombre' AND userPass='$cajaPassword'");
  
 $numUsuarios = $resultadoQuery -> num_rows;
- 
-for ( $i = 0; $i < $numPreguntas; $i++)
-{
-    $r = $resultadoQuery -> fetch_array();
-    echo $r['nombreUsuario'] .'<br/>';
-}
+// 
+//for ( $i = 0; $i < $numPreguntas; $i++)
+//{
+//    $r = $resultadoQuery -> fetch_array();
+//    echo $r['nombreUsuario'] .'<br/>';
+//}
 
-//if($numUsuarios > 0)
-//{
-//    //muestro la pantalla de la aplicación
-//}
-//else 
-//{
-//     
-//}
+if($numUsuarios > 0)
+{
+    //muestro la pantalla de la aplicación
+    require 'app.php';
+}
+else 
+{
+     //muestra pantalla de error
+     require 'error.php';
+}
